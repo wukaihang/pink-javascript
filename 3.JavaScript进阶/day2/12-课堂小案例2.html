@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="gift"></div>
+  <script>
+    const gift = '50g茶叶,清洗球'
+    // 1. 把字符串转换为数组
+    // console.log(gift.split(',')) // ['50g茶叶', '清洗球']
+    // 2. 根据数组元素的个数，生成对应的 span
+    // const str = gift.split(',').map(item => `<span>【赠品】 ${item}</span> <br>`).join('')
+    // // 3. 把生成的字符串赋值给 div
+    // document.querySelector('.gift').innerHTML = str
+
+    document.querySelector('.gift').innerHTML = gift
+      .split(',')
+      .map(item => `<span>【赠品】 ${item}</span> <br>`)
+      .join('')
+  </script>
+</body>
+
+</html>

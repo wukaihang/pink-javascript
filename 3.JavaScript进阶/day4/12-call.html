@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const obj = {
+      name: '张三',
+      age: 18,
+      sex: '男'
+    }
+    function fn(x, y) {
+      console.log(this)
+      console.log(x + y)
+    }
+    // call 方法
+    // 1. 调用函数
+    // 2. 改变函数的this指向
+    // function.call(thisArg, arg1, arg2, ...) 
+    // 1.1 thisArg: 改变后的this指向
+    // 1.2 arg1, arg2, ...: 传递的参数
+    fn.call(obj, 10, 20)
+  </script>
+</body>
+
+</html>

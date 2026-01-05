@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1. 变量多 单元值少 undefined
+    const [a, b, c, d,] = [1, 2, 3]
+    console.log(a, b, c, d)
+    // 防止 undefined 被赋值 可以设置默认值
+    const [a1 = 100, b1 = 200, c1 = 300] = [1, 2]
+    console.log(a1, b1, c1)
+
+    // 2. 变量少 单元值多  会被忽略
+    const [e, f] = [100, 200, 300]
+    console.log(e, f)
+    // 可用剩余参数（...rest）
+    const [g, h, ...rest] = [1000, 2000, 3000, 4000, 5000]
+    console.log(g, h, rest) // rest 真数组
+
+    // 3. 按需导入赋值
+    const [, , i, j] = [10000, 20000, 30000, 40000]
+    console.log(i, j) // 30000 40000
+
+    // 4. 支持多维数组的解构
+    const arr = [1, 2, [3, 4]]
+    console.log(arr[2][0]) // 3
+    const [l, m, n] = [1, 2, [3, 4]]
+    console.log(n[0]) // 3
+    const [o, p, [q, r]] = [1, 2, [3, 4]]
+    console.log(q) // 3
+  </script>
+</body>
+
+</html>

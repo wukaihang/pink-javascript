@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // window对象是一个全局对象，也可以说是JavaScript的顶级对象
+    // document、alert()、console.log()等都是window对象的属性和方法
+    // 基本BOM的属性和方法都是window的
+    // document.querySelector()
+    // window.document.querySelector()
+    console.log(window.document === document)
+    // 通过var声明的变量、函数是window对象的属性、方法
+    // window下的属性和方法，window可以省略
+    function fn() {
+      console.log('11')
+    }
+    window.fn()
+    var num = 100
+    console.log(window.num)
+  </script>
+</body>
+
+</html>

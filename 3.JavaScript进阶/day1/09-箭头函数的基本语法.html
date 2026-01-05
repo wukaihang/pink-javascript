@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // const fn = function() {
+    //   console.log('hello world')
+    // }
+    // 1. 箭头函数的基本语法
+    const fn = () => {
+      console.log('hello world')
+    }
+    fn()
+    // 2. 箭头函数的参数
+    const fn1 = (a, b) => {
+      console.log(a, b)
+    }
+    fn1(1, 2)
+    // 3. 箭头函数的参数只有一个时，可以省略括号
+    const fn2 = x => {
+      console.log(x)
+    }
+    fn2(100)
+    // 4. 只有一行代码时，可以省略大括号
+    const fn3 = x => console.log(x)
+    fn3(1000)
+    // 5. 只有一行代码时，可以省略 return 关键字
+    const fn4 = x => x + x
+    console.log(fn4(10))
+    // 6. 箭头函数可以直接返回一个对象(加括号的函数体返回函数对象字面量表达式)
+    const fn5 = (uname) => ({ uname: uname })
+    console.log(fn5('wukaihang'))
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const obj = {
+      name: '张三',
+      age: 18,
+      sex: '男'
+    }
+    function fn(x, y) {
+      console.log(this)
+      console.log(x + y)
+    }
+    // apply 方法
+    // 1. 调用函数
+    // 2. 改变函数的this指向
+    // function.apply(thisArg, [argsArray])
+    // 1.1 thisArg: 改变后的this指向
+    // 1.2 argsArray: 传递的参数数组
+    fn.apply(obj, [10, 20])
+    // call 方法和 apply 方法的区别
+    // 1. call 方法传递的参数是逐个传递的
+    // 2. apply 方法传递的参数是一个数组
+
+    // 使用场景：求数组的最大值 
+    // const max = Math.max(1, 2, 3, 4, 5)
+    const max = Math.max.apply(null, [1, 2, 3, 4, 5])
+    console.log(max)
+
+  </script>
+</body>
+
+</html>

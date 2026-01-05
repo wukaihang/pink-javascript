@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 基本数据类型（简单数据类型） 存储的是值 Number、String、Boolean、Null、Undefined等
+    let num1 = 10
+    let num2 = num1
+    num2 = 20
+    console.log(num1) // 结果是？ 10
+
+    // 引用类型（复杂数据类型） 存储的是地址 Object、Array、Function、Date、RegExp等
+    let obj1 = {
+      age: 18
+    }
+    let obj2 = obj1
+    // 修改属性 会影响到 obj1 因为 obj2 存储的是 obj1 的地址
+    obj2.age = 20
+    console.log(obj1.age) // 结果是？ 20
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let obj = {
+      'user-name': '行者',
+      name: '张三',
+      age: 18,
+      sex: '男'
+    }
+    console.log(obj.name)
+    console.log(obj.age)
+    console.log(obj.sex)
+    // 访问对象的属性时，不能使用点号操作符访问包含特殊字符的属性名
+    // 只能使用方括号操作符访问包含特殊字符的属性名，属性名必须用引号括起来
+    console.log(obj['user-name'])
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button>点击</button>
+  <script>
+    console.log(this) // window
+    function fn() {
+      console.log(this) // window
+    }
+    window.fn()
+    setTimeout(() => {
+      console.log(this) // window
+    }, 1000)
+    document.querySelector('button').addEventListener('click', function () {
+      console.log(this) // 点击的按钮
+    })
+
+    // 箭头函数的this指向见 day1 - 11-箭头函数的this指向.html
+  </script>
+</body>
+
+</html>

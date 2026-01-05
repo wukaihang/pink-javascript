@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 2.1 数组末尾删除元素 pop()
+    let arr1 = [1, 2, 3, 4, 5]
+    arr1.pop()
+    console.log(arr1)
+    console.log(arr1.pop()) // 4 返回被删除的元素的值
+
+    // 2.2 数组开头删除元素 shift()
+    let arr2 = [1, 2, 3, 4, 5]
+    arr2.shift()
+    console.log(arr2)
+    console.log(arr2.shift()) // 2 返回被删除的元素的值
+
+    // 2.3 删除指定元素 splice(起始位置的索引, 删除的元素个数)
+    let arr3 = [1, 2, 3, 4, 5]
+    arr3.splice(2, 1) // 从索引2开始删除1个元素
+    console.log(arr3) // [1, 2, 4, 5]
+    // arr3.splice(2) 删除索引2及后面的所有元素
+    // console.log(arr3) // [1, 2]
+  </script>
+</body>
+
+</html>

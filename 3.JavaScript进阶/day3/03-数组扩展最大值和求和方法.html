@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 自己定义 数组扩展方法 求和 和 最大值
+    // 定义一个方法 任何一个数组实例对象都可以使用
+    // 自定义的方法写到 数组.prototype 里面
+
+    // 1. 求和
+    // 注意： 对象的方法(包括原型方法)不能使用箭头函数 !!!
+    Array.prototype.sum = function () {
+      return this.reduce((pre, cur) => pre + cur, 0)
+    }
+
+    // 2. 最大值
+    Array.prototype.max = function () {
+      return Math.max(...this)
+    }
+
+    const arr = [1, 2, 3, 4, 5]
+    console.log(arr.sum()) // 15
+    console.log(arr.max()) // 5
+  </script>
+</body>
+
+</html>

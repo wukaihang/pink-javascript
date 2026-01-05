@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      text-align: center;
+      line-height: 200px;
+      color: #fff;
+      font-size: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <script src="./lodash.min.js"></script>
+  <script>
+    // 防抖核心思想是：当事件被触发时，并不立即执行函数，而是等待一个特定的延迟时间，
+    // 如果在这个延迟时间内事件又被触发了，则重新开始计时，直到延迟时间结束后才真正执行函数
+
+    // 场景：鼠标在盒子上移动。里面的数字就会 +1
+    const box = document.querySelector('.box')
+    let num = 0
+    // box.addEventListener('mousemove', function () {
+    //   // 如果里面有大量消耗性能的代码，比如dom操作、数据处理，容易造成卡顿
+    //   num++
+    //   this.innerHTML = num
+    // })
+
+    // 1. 利用 loadsh 库的 debounce 方法实现防抖
+    // 第一个参数是要执行的函数
+    // 第二个参数是延迟时间，单位是毫秒
+    // 事件触发后，等待500毫秒后执行函数
+    // box.addEventListener('mousemove', _.debounce(function () {
+    //   num++
+    //   this.innerHTML = num
+    // }, 500))
+
+    // 2. 利用 setTimeout 实现防抖
+    // 事件触发后，等待500毫秒后执行函数
+    let timer = null
+    box.addEventListener('mousemove', function () {
+      // 先清除之前的定时器
+      clearTimeout(timer)
+      // 重新设置定时器
+      timer = setTimeout(() => {
+        num++
+        this.innerHTML = num
+      }, 500)
+    })
+  </script>
+</body>
+
+</html>

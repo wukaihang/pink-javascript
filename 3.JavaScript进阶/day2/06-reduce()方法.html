@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1. 数组的实例方法
+    // 1.1 reduce() arr.reduce(function(上一次值, 当前值){}, 初始值)
+    const arr = [1, 2, 3, 4, 5]
+    // 1.1.1 没有初始值
+    const sum = arr.reduce((pre, cur) => pre + cur)
+    console.log(sum) // 15
+    // 1.1.2 有初始值
+    const sum2 = arr.reduce((pre, cur) => pre + cur, 10)
+    console.log(sum2) // 25
+
+    // 计算薪资案例
+    const arr1 = [{
+      name: '张三',
+      salary: 10000
+    }, {
+      name: '李四',
+      salary: 12000
+    }, {
+      name: '王五',
+      salary: 15000
+    }]
+    // 计算所有员工的薪资总和
+    // 第二个参数 0 表示初始值，没有初始值时，默认取数组的第一个元素，因此不能省略
+    const totalSalary = arr1.reduce((pre, cur) => pre + cur.salary, 0)
+    console.log(totalSalary) // 37000
+  </script>
+</body>
+
+</html>

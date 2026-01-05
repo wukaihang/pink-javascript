@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // forEach 遍历数组 适合遍历 数组对象
+    // 与 map 的区别：
+    // 1. forEach 没有返回值， map 有返回值
+    // 2. forEach 不能链式调用， map 可以链式调用
+    const arr = ['red', 'green', 'blue']
+    const re = arr.forEach((item, index) => {
+      console.log(item, index)
+    })
+    console.log(re) // undefined
+
+    const re2 = arr.map((item, index) => {
+      return item + index
+    })
+    console.log(re2) // ['red0', 'green1', 'blue2']
+  </script>
+</body>
+
+</html>

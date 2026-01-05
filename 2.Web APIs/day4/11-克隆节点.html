@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+
+  <script>
+    const ul = document.querySelector('ul')
+    // 1. 选中要克隆的节点
+    // 2. 克隆节点
+    // cloneNode(true) 深克隆 克隆节点以及节点的所有子节点
+    // cloneNode(false) 浅克隆 克隆节点 不克隆子节点
+    const liClone = ul.children[0].cloneNode(true)
+    // 3. 追加节点
+    ul.appendChild(liClone)
+    // ul.appendChild(ul.children[0].cloneNode(true))
+
+    // document.body.appendChild(ul.cloneNode(false))
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <textarea name="" id="" cols="30" rows="10"></textarea>
+  <script>
+    const str = '   你好啊，我是清风徐来   '
+    console.log(str)
+    // 去掉字符串 两端 的空格
+    console.log(str.trim())
+
+    const tx = document.querySelector('textarea')
+    tx.addEventListener('keyup', function (e) {
+      // console.log(tx.value)
+      // 去掉字符串 两端 的空格
+      console.log(tx.value.trim())
+    })
+  </script>
+</body>
+
+</html>

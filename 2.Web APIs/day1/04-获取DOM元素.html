@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+      text-align: center;
+      line-height: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">123</div>
+  <div class="box">456</div>
+  <p id="nav">导航栏</p>
+  <ul>
+    <li>首页</li>
+    <li>关于我们</li>
+    <li>联系我们</li>
+  </ul>
+
+  <script>
+    // 1. 获取匹配的 第一个 元素
+    // document.querySelector('css选择器')
+    const box = document.querySelector('.box')
+    console.log(box)
+    const nav = document.querySelector('#nav')
+    console.log(nav)
+    // 可以直接修改属性
+    nav.style.color = 'red'
+    const li = document.querySelector('ul li:first-child')
+    console.log(li)
+
+    // 2. 获取匹配的 所有 元素
+    // document.querySelectorAll('css选择器')
+    // 得到的是一个伪数组，无法直接使用数组的方法（push、pop等）
+    const boxes = document.querySelectorAll('.box')
+    console.log(boxes)
+    // 不能直接修改，但是可以遍历所有元素
+    for (let i = 0; i < boxes.length; i++) {
+      boxes[i].style.backgroundColor = 'skyblue'
+    }
+
+    // 3. 其他获取方式(了解)
+    // 3.1 根据id获取一个元素
+    const navById = document.getElementById('nav')
+    console.log(navById)
+    // 3.2 根据标签名获取所有元素
+    const divs = document.getElementsByTagName('li')
+    console.log(divs)
+    // 3.3 根据类名获取所有元素
+    const boxesByClass = document.getElementsByClassName('box')
+    console.log(boxesByClass)
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    img {
+      /* fixed是相对于视口定位 */
+      /* absolute是相对于最近的有定位的祖先元素定位 */
+      width: 100vw;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <img src="./images/ad.png" alt="">
+  <script>
+    const img = document.querySelector('img')
+    let timer = setTimeout(function () {
+      img.style.display = 'none'
+    }, 2000)
+  </script>
+</body>
+
+</html>

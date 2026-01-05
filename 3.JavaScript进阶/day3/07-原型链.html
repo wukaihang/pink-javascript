@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 所有的对象都是 Object 的实例对象
+    // function Object() {
+
+    // } 
+    function Person() {
+
+    }
+    const ldh = new Person()
+
+    // !!! 只要是对象都有 __proto__ 属性 包括原型对象 !!!
+    // 只要是原型对象就会有 constructor 属性
+
+    // console.log(ldh.__proto__ === Person.prototype) // true
+    console.log(Person.prototype)
+    console.log(Person.prototype.__proto__)
+    console.log(Person.prototype.__proto__ === Object.prototype) // true
+
+    // 原型链
+    // ldh.__proto__ === Person.prototype
+    // Person.prototype.__proto__ === Object.prototype
+    // Object.prototype.__proto__ === null
+
+    // 原型链其实是一种查找规则
+    // 当访问一个对象的属性或方法时，
+    // 会先在对象本身上查找
+    // 如果没有找到，就会去它的 __proto__ 指向的对象上查找
+    // 如果还没有找到，就会继续去 __proto__ 指向的对象上查找
+    // 直到找到 Object.prototype 为止
+    // 如果还没有找到，就会返回 null
+
+    // instanceof 运算符
+    // 用于判断一个对象是否是某个构造函数的实例(在原型链上)
+    // 如果是，就会返回 true
+    // 如果不是，就会返回 false
+    console.log(ldh instanceof Person) // true
+    console.log(ldh instanceof Object) // true
+    console.log(ldh instanceof Array) // false
+    console.log([1, 2, 3] instanceof Array) // true
+    console.log(Array instanceof Object) // true
+
+
+  </script>
+</body>
+
+</html>

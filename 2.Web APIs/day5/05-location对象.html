@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <form action="">
+    <input type="text" name="username">
+    <input type="password" name="password">
+    <button type="submit">登录</button>
+  </form>
+  <a href="#/my">我的</a>
+  <a href="#/cart">购物车</a>
+  <a href="#/home">首页</a>
+
+  <button class="reload">重新加载</button>
+  <script>
+    console.log(location)
+    // 1. location.href 可以获取当前页面的url地址
+    console.log(location.href)
+    // location.href = 'https://www.baidu.com'
+    // 2. location.search 可以获取url地址中的查询参数部分
+    console.log(location.search)
+    // 3. location.hash 可以获取url地址中的哈希值部分
+
+    // 4. reload 可以重新加载当前页面
+    const reload = document.querySelector('.reload')
+    reload.addEventListener('click', function () {
+      // 类似按F5键重新加载页面
+      location.reload()
+      // 类似按Ctrl+F5重新加载页面
+      // location.reload(true)
+    })
+  </script>
+</body>
+
+</html>

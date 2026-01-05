@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 元字符
+    // 1. 边界符
+    // ^ 表示以...开头
+    // $ 表示以...结尾
+    // /^...$/精确匹配 只有str为'...'时才为true
+    const str = '我们在学习前端端内容非常丰富，我们爱前端，希望学习前端能高新毕业'
+    console.log(/^我们/.test(str)) // true
+    console.log(/毕业$/.test(str)) // true
+    console.log(/^我们毕业$/.test(str)) // false 只有str为'我们毕业'时才为true
+    console.log(/^前端/.test(str)) // false
+    console.log('-------------------------')
+    //2. 量词
+    // * 表示0个或多个
+    // + 表示1个或多个
+    // ? 表示0个或1个
+    // {n} 表示重复n个
+    // {n,} 表示重复n个或更多个
+    // {n,m} 表示重复n个到m个 逗号左右两侧不能有空格
+    console.log(/^我们*$/.test(str + '我们')) // false 只有str为'我'+若干个'们'时才为true
+    console.log(/^我们*$/.test('我们们')) // true
+    console.log(/前端+/.test(str)) // true
+    console.log(/^哈+$/.test('哈哈')) // true
+    console.log(/^哈?$/.test('哈哈')) // false
+    console.log(/前端{2}/.test(str)) // true 包含'前端端'
+    console.log(/^哈{4,}$/.test('哈哈哈')) // false
+    console.log(/^哈{4,}$/.test('哈哈哈哈')) // true
+    console.log(/^哈{4,6}$/.test('哈哈哈哈')) // true
+    console.log(/^哈{4,6}$/.test('哈哈哈哈哈哈哈')) // false
+    console.log('-------------------------')
+
+    // 3. 字符类
+    // [] 匹配字符集的集合
+    // 匹配a或b或c
+    console.log(/^[abc]$/.test('a')) // true
+    console.log(/^[abc]$/.test('b')) // true
+    console.log(/^[abc]$/.test('c')) // true
+    console.log(/^[abc]$/.test('ab')) // false
+    console.log(/^[abc]{2}$/.test('ab')) // true
+    console.log('-------------------------')
+    console.log(/^[a-z]$/.test('p')) // true
+    console.log(/^[a-z]$/.test('P')) // false
+    console.log(/^[0-9a-z]$/.test('1')) // true
+    console.log(/^[0-9a-z]$/.test('p')) // true
+    console.log(/^[A-Z][a-zA-Z0-9-_]{5,17}$/.test('Wukaihang_123456')) // true
+    console.log(/^[A-Z][a-zA-Z0-9-_]{5,17}$/.test('wukaihang_123456')) // false
+    console.log('-------------------------')
+    // [^] 匹配除了字符集的集合
+    console.log(/^[^abc]$/.test('a')) // false
+    console.log(/^[^abc]$/.test('b')) // false
+    console.log(/^[^abc]$/.test('c')) // false
+    console.log(/^[^abc]$/.test('d')) // true
+    // [|] 或
+    console.log(/^[a-z|A-Z|0-9_]$/.test('a')) // true
+    console.log(/^[a-zA-Z0-9_]$/.test('1')) // true
+    console.log('-------------------------')
+    // 4. 预定义类
+    // \d 匹配0-9之间的数字
+    // \D 匹配非0-9之间的字符
+    // \w 匹配0-9a-zA-Z_
+    // \W 匹配非0-9a-zA-Z_
+    // \s 匹配空格(包括空格、制表符、换行符等)
+    // \S 匹配非空格
+    console.log(/^\d$/.test('1')) // true
+    console.log(/^\D$/.test('1')) // false
+    console.log(/^\w$/.test('1')) // true
+    console.log(/^\w$/.test('a')) // true
+    console.log(/^\w$/.test('_')) // true
+    console.log(/^\W$/.test('1')) // false
+    console.log(/^\W$/.test('a')) // false
+    console.log(/^\W$/.test('_')) // false
+    console.log(/^\s$/.test(' ')) // true
+    console.log(/^\S$/.test(' ')) // false
+    // 日期格式
+    // 格式：yyyy-MM-dd
+    console.log(/^\d{4}-\d{2}-\d{2}$/.test('2023-03-20')) // true
+    console.log(/^\d{4}-\d{2}-\d{2}$/.test('2023-03-201')) // false
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 修饰符跟在正则表达式的后面
+    console.log(/^java$/.test("java")) // true
+    console.log(/^java$/.test("Java")) // false
+    // 忽略大小写 i
+    console.log(/^java$/i.test("Java")) // true
+    // 全局匹配 g
+
+    // replace() 方法
+    // 格式：str.replace(reg, newStr)
+    // 功能：将字符串中符合正则表达式的部分替换为新的字符串
+    // 返回值：替换后的字符串
+    const str = 'hello java. Java is a good language'
+    const re = str.replace(/java/ig, 'js')
+    console.log(re) // hello js, js is a good language
+  </script>
+</body>
+
+</html>

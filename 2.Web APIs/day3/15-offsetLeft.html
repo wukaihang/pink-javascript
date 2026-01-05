@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      margin: 100px;
+    }
+
+    p {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      margin: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <p>123</p>
+  </div>
+  <script>
+    const div = document.querySelector('div')
+    const p = document.querySelector('p')
+    // 元素的左内边距 到 元素的左边框的距离
+    // 如果祖先元素有定位属性 则以最近的定位祖先元素的左边框为参考点
+    // 否则以body元素的左边框为参考点
+    console.log(p.offsetLeft)
+  </script>
+</body>
+
+</html>

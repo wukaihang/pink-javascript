@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 同步任务直接放入执行栈中执行
+    console.log(1)
+    // 异步任务（定时器、点击事件、网络请求Ajax）执行完后，会将回调函数放入任务队列中
+    // 任务队列中的任务依次放入执行栈中执行
+    document.addEventListener('click', function () {
+      console.log(5)
+    })
+    console.log(2)
+    setTimeout(function () {
+      console.log(3)
+    }, 3000)
+    console.log(4)
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 公共的部分放到原型上
+    // 普通对象
+    // const Person = {
+    //   eye: 2,
+    //   head: 1
+    // }
+
+    // Woman.prototype = Person  // 对象 = 另一个对象
+
+    // Woman 和 Man 的原型对象是同一个对象
+    // 因此 添加 Woman.prototype.baby 方法时 Man 也会有 baby 方法
+    // console.log(Woman.prototype === Man.prototype) // true
+
+    // 构造函数 new 出来的实例对象 结构一样 但是 对象 不一样
+    function Person() {
+      this.eye = 2
+      this.head = 1
+    }
+
+    function Woman() {
+
+    }
+    // 原型继承
+    // 父构造函数（父类） 子构造函数（子类）
+    // 子类的原型 = new 父类()
+    Woman.prototype = new Person()
+    // 指回原来的构造函数
+    Woman.prototype.constructor = Woman
+    // 给 Woman 添加一个方法 baby
+    Woman.prototype.baby = function () {
+      console.log('生孩子')
+    }
+
+    const red = new Woman()
+    console.log(red)
+
+    function Man() {
+
+    }
+    Man.prototype = new Person()
+    Man.prototype.constructor = Man
+
+    const blue = new Man()
+    console.log(blue)
+
+    // 继承构造函数，new 出来的实例对象 结构一样 但是 对象 不一样
+    // 因此添加 Woman.prototype.baby 方法时 Man 不会有 baby 方法
+    console.log(Woman.prototype === Man.prototype) // false
+  </script>
+</body>
+
+</html>

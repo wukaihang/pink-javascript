@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 数组解构赋值 数组解构是将数组中的元素批量赋值给变量的简洁语法
+    // const arr = [1, 2, 3, 4, 5]
+    // const [a, b, c, d, e] = arr
+    const [max, min, ...arr] = [100, 20, 30, 50, 80]
+    console.log(max, min, arr)
+
+    // 数组解构赋值 可以用于交换变量的值
+    let a = 100
+    let b = 200
+      // 为什么要加分号？ 
+      // 不加分号会被系统解析为 b = 200[a, b]
+      ;[a, b] = [b, a]
+    console.log(a, b)
+  </script>
+</body>
+
+</html>

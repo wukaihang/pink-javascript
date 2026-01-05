@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function Star() {
+
+    }
+    Star.prototype = {
+      // constructor 是原型对象 prototype 的一个属性
+      // constructor的作用：指向创造这个原型对象的 构造函数
+      // 重新指向创造这个原型对象的 构造函数
+      constructor: Star,
+      sing: function () {
+        console.log('唱歌')
+      },
+      dance: function () {
+        console.log('跳舞')
+      }
+    }
+    console.log(Star.prototype)
+  </script>
+</body>
+
+</html>

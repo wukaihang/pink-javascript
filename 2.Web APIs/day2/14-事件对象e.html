@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button>点击</button>
+  <input type="text">
+  <script>
+    const btn = document.querySelector('button')
+    // 事件对象 e
+    // 事件对象是事件处理函数的第一个参数
+    // 事件对象中包含了事件相关的信息
+    btn.addEventListener('click', function (e) {
+      console.log(e)
+      // 事件类型
+      console.log(e.type)
+      // 事件发生时，鼠标距离浏览器窗口的位置
+      console.log(e.clientX, e.clientY)
+      // 事件发生时，鼠标距离事件源元素(按钮)的位置
+      console.log(e.offsetX, e.offsetY)
+    })
+
+    const input = document.querySelector('input')
+    input.addEventListener('keyup', function (e) {
+      // 事件发生时，用户按下的键
+      // console.log(e.key)
+      if (e.key === 'Enter') {
+        console.log('用户按下了回车键')
+      }
+    })
+  </script>
+</body>
+
+</html>

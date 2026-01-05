@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1. getTime()
+    const date = new Date()
+    console.log(date.getTime())
+    // 2. +new Date() 常用
+    console.log(+new Date())
+    // 3. Date.now()
+    console.log(Date.now())
+
+    // 得到指定时间的时间戳
+    console.log(new Date('2023-01-01 18:30:00').getTime())
+
+    // 根据 Day() 返回星期几
+    const arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+    console.log(arr[new Date().getDay()])
+  </script>
+</body>
+
+</html>

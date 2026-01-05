@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function Star() { }
+    const ldh = new Star()
+    // 对象原型 __proto__ 只读 在某些浏览器显示的是 [[Prototype]]
+    // 实例对象.__proto__ 指向 该实例对象的构造函数的原型对象
+    // 实例对象.__proto__constructor 指向 该实例对象的构造函数
+    console.log(ldh.__proto__)
+
+    // 构造函数 实例对象 原型对象 三者关系
+    // const ldh = new Star() // 通过 实例化 构造函数 得到 实例对象
+
+    console.log(Star.prototype) // Star.prototype 指向 原型对象
+    console.log(ldh.__proto__) // ldh.__proto__ 指向 原型对象
+    console.log(Star.prototype === ldh.__proto__) // true 
+
+    console.log(ldh.__proto__.constructor) // 指向 构造函数 Star
+    console.log(Star.prototype.constructor) // 指向 构造函数 Star
+    console.log(ldh.__proto__.constructor === Star) // true 
+
+
+  </script>
+</body>
+
+</html>

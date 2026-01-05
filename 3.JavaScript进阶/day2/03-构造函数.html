@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1. 构造函数的作用：创建对象
+    // 2. 构造函数的两个约定
+    // 2.1 构造函数名首字母要大写
+    // 2.2 构造函数只能由 new 关键字来调用
+    function Pig(name, age) {
+      this.name = name
+      this.age = age
+    }
+    // 使用new关键字调用函数的行为称为实例化
+    // 构造函数内部无需写return，返回值为新创建的对象，return返回值无效
+    const Gorge = new Pig('乔治', 3)
+    const Peppa = new Pig('佩奇', 2)
+    console.log(Gorge)
+    console.log(Peppa)
+    Peppa.name = '小猪佩奇'  // 实例属性(实例对象.属性)
+    Peppa.sayName = function () { // 实例方法(实例对象.方法)
+      console.log(this.name)
+    }
+    Peppa.sayName()
+
+    Pig.eyes = 2 // 静态属性(构造函数.属性)
+    Pig.sayEyes = function () { // 静态方法(构造函数.方法)
+      console.log(this.eyes)
+    }
+    Pig.sayEyes()
+
+  </script>
+</body>
+
+</html>

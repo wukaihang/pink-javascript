@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let that
+    function Star(name, age) {
+      // 1. 公共的属性写到 构造函数 里面
+      this.name = name
+      this.age = age
+      // this.sing = function () {
+      //   console.log('唱歌')
+      // }
+    }
+
+    // 2. 公共的方法写到 原型对象 里面
+    // 2.1 构造函数通过原型分配的函数是所有对象所 共享 的
+    // 2.2 JavaScript 规定，每一个构造函数都有一个 prototype 属性，指向另一个对象，我们称之为原型对象
+    // 2.3 这个对象可以挂载函数，对象实例化不会多次创建原型上函数，节约内存
+    // 2.4 我们可以把那些不变的方法，直接定义在 prototype 对象上，这样所有对象的实例就可以共享这些方法
+    // 2.5 构造函数和原型对象中的 this 都指向实例化的对象
+    Star.prototype.sing = function () {
+      that = this
+      console.log('唱歌')
+    }
+
+    const ldh = new Star('刘德华', 18)
+    const zxy = new Star('张学友', 19)
+    ldh.sing()
+    console.log(ldh === zxy) // false 说明对象不一样
+    console.log(ldh.sing === zxy.sing) // true 说明函数一样 共享
+    console.log(that === ldh) // true 说明 that 指向了(this, this指向了) ldh
+  </script>
+</body>
+
+</html>

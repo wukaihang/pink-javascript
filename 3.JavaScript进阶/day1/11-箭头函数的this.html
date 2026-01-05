@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1. 以前 this 的指向：谁调用这个函数，this 就指向谁
+    console.log(this) // window
+    // 普通函数
+    function fn() {
+      console.log(this) // window
+    }
+    window.fn()
+    // 对象方法里面的this 
+    const obj = {
+      name: '张三',
+      sayName() {
+        console.log(this) // obj
+      }
+    }
+    obj.sayName()
+
+    // 2. 箭头函数不会创建自己的 this，箭头函数的 this 指向是继承而来的，
+    // 从作用域链的上一层沿用 this
+    const fn1 = () => {
+      console.log(this) // window
+    }
+    fn1()
+    // 对象方法箭头函数this
+    const obj1 = {
+      name: '张三',
+      sayName: () => {
+        console.log(this) // window  重要
+      }
+    }
+    obj1.sayName()
+    const obj2 = {
+      name: '张三',
+      sayName: function () {
+        console.log(this) // obj2
+        let i = 1
+        const count = () => {
+          console.log(this) // obj2  重要
+        }
+      }
+    }
+    obj2.sayName()
+
+    // !!! DOM事件回调函数不推荐使用箭头函数
+    // 事件回调函数使用箭头函数时，this 为全局的window
+
+    // 不能用箭头函数的情况（需要使用 this 时）
+    // 1. 构造函数
+    // 2. 原型方法
+    // 3. 事件回调函数
+    // 4. 需要通过 this 访问自身属性时
+    // 5. 需要arguments对象时
+  </script>
+</body>
+
+</html>

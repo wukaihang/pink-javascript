@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .dad {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+
+    .son {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="dad">
+    <div class="son"></div>
+  </div>
+
+  <script>
+    const dad = document.querySelector('.dad')
+    const son = document.querySelector('.son')
+    // mouseenter 和 mouseleave 不会冒泡
+    // mouseover 和 mouseout 会冒泡
+    dad.addEventListener('mouseenter', function () {
+      console.log('鼠标经过')
+    })
+    dad.addEventListener('mouseleave', function () {
+      console.log('鼠标离开')
+    })
+  </script>
+</body>
+
+</html>

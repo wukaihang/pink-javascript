@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let arr = ['赵云', '黄忠', '关羽', '张飞', '马超', '刘备', '曹操']
+    // 需求：随机取出数组中的一个元素显示在页面上，显示过的元素不能再显示
+    let randomIndex = Math.floor(Math.random() * arr.length)
+    document.write(arr[randomIndex])
+    // 将取出的元素从数组中删除
+    arr.splice(randomIndex, 1)
+    console.log(arr)
+  </script>
+</body>
+
+</html>

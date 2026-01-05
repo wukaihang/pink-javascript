@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1. 把所有var声明的变量提升到当前作用域的顶部
+    // 2. 只提升声明，不提升赋值
+    console.log(a) // undefined
+    var a = 10
+    console.log(a) // 10
+  </script>
+</body>
+
+</html>

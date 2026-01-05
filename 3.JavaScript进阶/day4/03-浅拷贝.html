@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const obj = {
+      name: 'wangwu',
+      age: 18,
+      sex: '男',
+      family: {
+        father: '张三',
+        mother: '李四'
+      }
+    }
+    // 浅拷贝和深拷贝只针对引用类型（数组、对象）
+    // 浅拷贝拷贝的是对象的地址，深拷贝拷贝的是对象的内容
+
+    // 浅拷贝
+    // 简单数据类型直接拷贝值，复杂数据类型拷贝地址（引用类型：数组、对象）
+    // const o = { ...obj }
+    // console.log(o)
+    // o.age = 20
+    // o.family.father = '王三'
+    // console.log(o)
+    // console.log(obj)
+
+    const o = {}
+    Object.assign(o, obj)
+    o.age = 20
+    o.family.father = '王三'
+    console.log(o)
+    console.log(obj)
+
+  </script>
+</body>
+
+</html>

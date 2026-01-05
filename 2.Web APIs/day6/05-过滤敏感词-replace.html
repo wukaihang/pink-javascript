@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <textarea name="" id=""></textarea>
+  <button>发布</button>
+  <div></div>
+  <script>
+    const tx = document.querySelector('textarea')
+    const btn = document.querySelector('button')
+    const div = document.querySelector('div')
+    btn.addEventListener('click', function () {
+      const content = tx.value.trim()
+      if (content === '') {
+        alert('请输入内容')
+        return
+      }
+      const re = content.replace(/激情|敏感词/ig, '**')
+      div.innerHTML = re
+      tx.value = ''
+    })
+  </script>
+</body>
+
+</html>

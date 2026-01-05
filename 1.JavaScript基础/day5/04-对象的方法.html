@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let obj = {
+      uname: '刘德华',
+      singSongs: function () {
+        console.log(this.uname + '在唱歌')
+      },
+      calculate: function (x, y) {
+        console.log(x + y)
+      }
+    }
+    obj.singSongs()
+    obj.calculate(1, 2)
+  </script>
+</body>
+
+</html>

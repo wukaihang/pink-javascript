@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function fn(x, y) {
+      x = x || 0 // 如果x为假值（0、''、null、undefined、false、NaN），则赋值为0
+      y = y || 0
+      console.log(x + y)
+    }
+    fn(1, 2)
+    fn()
+
+    // 逻辑与中断
+    let age = 18
+    console.log(false && age++) // age++ 不会执行 一假则假 返回false
+    console.log(age)
+
+    // 逻辑或中断
+    console.log(true || age++) // age++ 不会执行 一真则真 返回true
+    console.log(age)
+  </script>
+</body>
+
+</html>

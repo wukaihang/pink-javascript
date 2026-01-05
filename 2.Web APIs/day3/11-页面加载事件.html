@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 等待页面所有资源加载完毕后执行回调函数
+    window.addEventListener('load', function () {
+      const btn = document.querySelector('button')
+      btn.addEventListener('click', function () {
+        alert('点击了按钮')
+      })
+    })
+
+    // 等待图片加载完毕后执行回调函数
+    // img.addEventListener('load', function() {
+    //   console.log('图片加载完毕')
+    // })
+
+    // 等待DOM树加载完毕后执行回调函数(给 document 添加)
+    document.addEventListener('DOMContentLoaded', function () {
+      console.log('DOM树加载完毕')
+    })
+  </script>
+</head>
+
+<body>
+  <button>点击</button>
+</body>
+
+</html>

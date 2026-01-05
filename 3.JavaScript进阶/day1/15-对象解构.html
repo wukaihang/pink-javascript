@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // const uname = '李四'
+    const obj = {
+      uname: '张三',
+      age: 18,
+      sex: '男'
+    }
+    // 1. 对象属性的值将被赋值给 与属性名相同 的变量
+    // 2. 对象解构的变量名 可以重新改名 格式为 旧变量名: 新变量名
+    const { uname: username, age, sex } = obj
+    console.log(username, age, sex)
+
+
+    // 3. 解构数组对象
+    // const pig = [{
+    //   uname: '佩奇',
+    //   age: 1,
+    //   sex: '男'
+    // }, {
+    //   uname: '乔治',
+    //   age: 2,
+    //   sex: '男'
+    // }]
+    // const [{ uname: pig1 }, { uname: pig2 }] = pig
+    // console.log(pig1, pig2)
+
+    // 4. 多级对象解构 格式：const { 一级属性名: 一级变量名, 二级属性名: 二级变量名 } = 对象
+    // const pig = {
+    //   name: '佩奇',
+    //   family: {
+    //     father: '乔治',
+    //     mother: '玛丽'
+    //   }
+    // }
+    // const { name, family: { father, mother } } = pig
+    // console.log(name, father, mother)
+
+    const person = [{
+      name: '佩奇',
+      family: {
+        father: '乔治',
+        mother: '玛丽'
+      }
+    }]
+    const [{ name, family: { father, mother } }] = person
+    console.log(name, father, mother)
+  </script>
+</body>
+
+</html>

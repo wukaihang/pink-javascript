@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 补0函数
+    function padZero(num) {
+      if (num < 10) {
+        return '0' + num
+      } else {
+        return num
+      }
+    }
+
+    function getTime(time) {
+      let hour
+      let minute
+      let second
+      hour = padZero(parseInt(time / 60 / 60))
+      minute = padZero(parseInt(time / 60 % 60))
+      second = padZero(parseInt(time % 60))
+      return `${time}秒转换为 ${hour}时${minute}分${second}秒`
+    }
+    let second = +prompt('请输入时间（秒）')
+    document.write(getTime(second))
+
+  </script>
+</body>
+
+</html>

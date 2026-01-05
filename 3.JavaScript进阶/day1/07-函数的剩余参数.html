@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function getSum(a, ...arr) {
+      // ...arr 是剩余参数，将未被收集到的参数都收集到一个 真数组 中
+      // console.log(arr)
+      let sum = a
+      for (let i = 0; i < arr.length; i++) {
+        sum += arr[i]
+      }
+      console.log(sum)
+    }
+    getSum(1, 2, 3, 4, 5)
+    getSum(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+  </script>
+</body>
+
+</html>

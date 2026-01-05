@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      text-align: center;
+      line-height: 200px;
+      color: #fff;
+      font-size: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <script src="./lodash.min.js"></script>
+  <script>
+    // 节流核心思想是：在一定时间内，无论触发多少次，只执行一次函数
+
+    // 场景：鼠标在盒子上移动。里面的数字就会 +1
+    const box = document.querySelector('.box')
+    let num = 0
+    // box.addEventListener('mousemove', function () {
+    //   // 如果里面有大量消耗性能的代码，比如dom操作、数据处理，容易造成卡顿
+    //   num++
+    //   this.innerHTML = num
+    // })
+
+    // 1. 利用 loadsh 库的 throttle 方法实现节流
+    // 第一个参数是要执行的函数
+    // 第二个参数是延迟时间，单位是毫秒
+    // 事件触发后，等待1000毫秒后执行函数
+    // box.addEventListener('mousemove', _.throttle(function () {
+    //   num++
+    //   this.innerHTML = num
+    // }, 1000))
+
+    // 2. 利用 setTimeout 实现节流
+    function throttle(fn, delay) {
+      let timer = null
+      return function () {
+        if (!timer) {
+          timer = setTimeout(function () {
+            fn()
+            // 在setTimeout函数中是无法删除timer的，因为timer还在运作
+            // 所以需要在setTimeout函数中手动删除timer
+            timer = null // 手动删除timer
+          }, delay)
+        }
+      }
+    }
+
+    // 事件触发后，等待1000毫秒后执行函数
+    box.addEventListener('mousemove', throttle(function () {
+      num++
+      console.log(num)
+      // 不能用 this 因为此时的this指向的是window对象（setTimeout函数）
+      box.innerHTML = num
+    }, 1000))
+
+    // 防抖：延迟单位时间后执行，单位时间内只执行最后一次
+    // 常用于搜索框、手机号、邮箱验证输入检测
+
+    // 节流：单位时间内只执行第一次
+    // 常用于高频事件：鼠标移动mousemove、滚动条滚动scroll、窗口缩放resize等
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const str = '我们在学习前端，希望学习前端能高新毕业'
+    // 1. 定义规则 
+    const reg = /前端/
+    // 2. 是否包含 规则.test() 返回 true/false
+    console.log(reg.test(str))
+    // 3. 包含的内容 规则.exec() 返回 数组（包含的内容，索引，原始字符串）/null
+    console.log(reg.exec(str))
+  </script>
+</body>
+
+</html>

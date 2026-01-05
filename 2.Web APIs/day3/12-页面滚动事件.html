@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 300px 0;
+      ;
+      height: 2000px;
+    }
+
+    div {
+      display: none;
+      height: 200px;
+      width: 200px;
+      border: 1px solid #e4e4e4;
+      margin: 100px;
+      overflow: scroll;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, voluptatibus.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, voluptatibus.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, voluptatibus.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, voluptatibus.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, voluptatibus.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, voluptatibus.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, voluptatibus.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, voluptatibus.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, voluptatibus.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, voluptatibus.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, voluptatibus.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, voluptatibus.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, voluptatibus.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, voluptatibus.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, voluptatibus.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, voluptatibus.
+
+  </div>
+  <script>
+    const div = document.querySelector('div')
+    // 页面滚动事件
+    window.addEventListener('scroll', function () {
+      // console.log('页面滚动了')
+      // 获取 html 元素  document.documentElement
+      // console.log(document.documentElement)
+      const n = document.documentElement.scrollTop
+      if (n >= 100) {
+        div.style.display = 'block'
+      }
+      else {
+        div.style.display = 'none'
+      }
+    })
+
+    // div.addEventListener('scroll', function () {
+    //   // console.log('div滚动了')
+    //   // div被卷去的头部 scrollTop 单位是像素
+    //   // div被卷去的左边 scrollLeft 单位是像素
+    //   console.log(div.scrollTop)
+    // })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // (function() {
+    //   console.log(1) // 立即执行
+    // })() // 第二个小括号本质上在调用函数
+
+    // (function(){
+    //   let num = 10
+    // })(); // 立即执行函数必须加分号
+    // (function(){
+    //   let num = 20
+    // })();
+
+    (function (x, y) {
+      console.log(x + y)
+    })(1, 2)
+      // 第二种写法
+      (function (x, y) {
+        console.log(x + y)
+      }(1, 2))
+  </script>
+</body>
+
+</html>

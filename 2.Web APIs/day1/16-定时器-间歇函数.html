@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // setInterval(函数, 间隔时间)
+    // setInterval(function () {
+    //   console.log('hello world')
+    // }, 1000)
+
+    function sayHello() {
+      console.log('hello world')
+    }
+    let timer = setInterval(sayHello, 1000)
+    console.log(timer)
+
+    // 清除定时器
+    clearInterval(timer)
+
+    let i = 1
+    setInterval(function () {
+      document.write(`${i++} `)
+    }, 1000)
+  </script>
+</body>
+
+</html>

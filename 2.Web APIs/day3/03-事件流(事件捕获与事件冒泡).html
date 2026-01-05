@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .fa {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+
+    .son {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="fa">
+    <div class="son"></div>
+  </div>
+  <script>
+    const fa = document.querySelector('.fa')
+    const son = document.querySelector('.son')
+    // // 事件捕获
+    // // 事件捕获是从document开始，逐级向下查找，直到找到目标元素
+    // // addEventListener第三个参数如果是true，就是事件捕获，默认是false，事件冒泡
+    // document.addEventListener('click', function () {
+    //   alert('document')
+    // }, true)
+    // fa.addEventListener('click', function () {
+    //   alert('fa')
+    // }, true)
+    // son.addEventListener('click', function () {
+    //   alert('son')
+    // }, true)
+
+    // // 事件冒泡
+    // // 当一个元素的事件被触发时，同样的事件（同名事件） 会在该元素的所有祖先元素中依次被触发
+    // // 事件冒泡是从目标元素开始，逐级向上冒泡，直到document
+    // document.addEventListener('click', function () {
+    //   alert('document')
+    // })
+    // fa.addEventListener('click', function () {
+    //   alert('fa')
+    // })
+    // son.addEventListener('click', function () {
+    //   alert('son')
+    // })
+
+    // 阻止冒泡
+    // 事件冒泡的过程中，每个元素的事件处理函数都会被调用
+    // 但是，我们可以在事件处理函数中调用事件对象的stopPropagation方法，来阻止事件冒泡
+    son.addEventListener('click', function (e) {
+      alert('son')
+      // 阻止流动传播（事件冒泡或事件捕获）
+      // 事件对象.stopPropagation()
+      e.stopPropagation()
+    })
+    fa.addEventListener('click', function () {
+      alert('fa')
+    })
+    document.addEventListener('click', function () {
+      alert('document')
+    })
+  </script>
+</body>
+
+</html>

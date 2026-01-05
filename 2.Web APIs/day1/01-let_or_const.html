@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // const 声明的值不能修改，而且const声明变量时必须赋值
+    // 对于引用类型数据，const声明的变量里面存的不是值，而是地址，
+    // 因此const声明的引用类型变量不能重新赋值，但是可以修改引用类型变量指向的对象的属性
+    const arr = ['a', 'b', 'c']
+    arr.push('d')
+    console.log(arr)
+
+    const obj = {
+      name: '张三',
+      age: 18
+    }
+    obj.age = 20
+    console.log(obj)
+  </script>
+</body>
+
+</html>

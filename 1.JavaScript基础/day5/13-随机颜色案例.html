@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div style="width: 200px; height: 200px;"></div>
+
+  <script>
+    function getRandomColor(flag = true) {
+      // 如果是 true，返回 十六进制随机颜色
+      if (flag) {
+        let hex = '0123456789abcdef'
+        let color = '#'
+        for (let i = 0; i < 6; i++) {
+          let randomIndex = Math.floor(Math.random() * 16)
+          color += hex[randomIndex]
+        }
+        return color
+      } else {
+        // 否则，返回随机的 rgb 颜色
+        let r = Math.floor(Math.random() * 256)
+        let g = Math.floor(Math.random() * 256)
+        let b = Math.floor(Math.random() * 256)
+        return `rgb(${r}, ${g}, ${b})`
+      }
+    }
+    // 测试
+    console.log(getRandomColor(true))
+    console.log(getRandomColor(false))
+    console.log(getRandomColor())
+
+    const div = document.querySelector('div')
+    div.style.backgroundColor = getRandomColor()
+  </script>
+</body>
+
+</html>

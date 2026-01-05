@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const obj = {
+      name: 'wukaihang',
+      age: 18,
+      gender: '男'
+    }
+    // 存储对象时，需要将对象转换为字符串
+    // JSON对象 属性和值都要加 双引号
+    localStorage.setItem('obj', JSON.stringify(obj))
+    // 获取对象
+    const objStr = localStorage.getItem('obj')
+    // console.log(objStr)
+    // console.log(typeof objStr)
+    console.log(JSON.parse(objStr))
+
+  </script>
+</body>
+
+</html>

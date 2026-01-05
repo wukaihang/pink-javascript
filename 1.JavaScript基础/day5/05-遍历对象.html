@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // for in 不推荐遍历数组 因为数组的下标是数字 但是for in 遍历的是字符串
+    let arr = ['张三', '李四', '王五']
+    for (let k in arr) {
+      console.log(k) // 数组的下标 索引号 但是是字符串'0' '1' '2'
+      console.log(arr[k]) // 数组的元素
+    }
+
+    // for in 遍历对象
+    let obj = {
+      uname: '刘德华',
+      age: 18,
+      sex: '男'
+    }
+    for (let k in obj) {
+      console.log(k)  // 对象的属性名 字符串类型 'uname' 'age' 'sex'
+      console.log(obj[k]) // 对象的属性值
+    }
+  </script>
+</body>
+
+</html>

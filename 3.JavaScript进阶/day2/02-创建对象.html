@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // // 1. 利用对象字面量创建对象
+    // const obj1 = {
+    //   name: '张三',
+    //   age: 18,
+    // }
+    // console.log(obj1)
+
+
+    // 2. 利用new Object()创建对象
+    // const obj = new Object()
+    // obj.name = '张三'
+    // obj.age = 18
+    // console.log(obj)
+
+    // const obj = new Object({
+    //   name: '张三',
+    //   age: 18,
+    // })
+    // console.log(obj)
+
+    // 3. 利用构造函数创建对象
+    function Person(name, age) {
+      this.name = name
+      this.age = age
+    }
+    const p1 = new Person('张三', 18)
+    console.log(p1)
+  </script>
+</body>
+
+</html>

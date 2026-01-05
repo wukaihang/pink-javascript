@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const arr = ['red', 'green', 'blue']
+    // 1. 数组map方法
+    // map 方法用于遍历数组，将数组中的每个元素进行处理，返回一个新数组
+    // forEach 方法用于遍历数组，将数组中的每个元素进行处理，没有返回值
+    const newArr = arr.map(function (ele, index) {
+      console.log(ele, index) // 数组元素和索引号 red 0
+      return ele + '颜色'
+    })
+    console.log(newArr)
+
+    // 2. 数组join方法
+    // join 方法用于将数组中的元素连接起来，返回一个字符串
+    // 参数：指定连接符，默认是逗号
+    const str = newArr.join('|')
+    console.log(str)
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let str = '123'
+    console.log(Number(str)) // 123
+    // let num = prompt('请输入一个数字')
+    // console.log(num)
+    let num = Number(prompt('请输入一个数字'))
+    console.log(Number(num))
+
+    // parseInt() 方法可以把一个字符串转换为一个整数
+    // 它会从字符串的左侧开始解析，遇到非数字字符就会停止解析
+    console.log(parseInt('12px')) // 12
+
+    // parseFloat() 方法可以把一个字符串转换为一个浮点数
+    // 它会从字符串的左侧开始解析，遇到非数字字符就会停止解析
+    console.log(parseFloat('12.34px')) // 12.34
+
+  </script>
+</body>
+
+</html>

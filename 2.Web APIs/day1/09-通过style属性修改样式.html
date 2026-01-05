@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <script>
+    const box = document.querySelector('.box')
+    // 修改样式属性 对象.style.属性名 = 属性值
+    box.style.backgroundColor = 'orange' // 遇到多组单词的属性，采用小驼峰命名法
+    box.style.width = '300px'
+    box.style.height = '300px'
+  </script>
+</body>
+
+</html>

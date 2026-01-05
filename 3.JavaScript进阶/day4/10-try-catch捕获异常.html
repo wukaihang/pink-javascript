@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <p>123</p>
+  <script>
+    function fn() {
+      try {
+        // 可能发生错误的代码 要写到 try 代码块中
+        const p = document.querySelector('.p')
+        p.style.color = 'red'
+      } catch (err) {
+        // 发生错误后，会执行 catch 代码块拦截错误，但是不中断程序运行
+        console.log(err.message) // message 是浏览器内置的属性，用来获取错误提示信息
+        // 需要添加 return 语句中断程序
+        // return
+        throw new Error('查询元素失败')
+      } finally {
+        // 无论是否发生错误，finally 代码块中的代码都会执行
+        alert('程序结束')
+      }
+      // console.log('程序继续运行')
+
+    }
+    fn()
+  </script>
+</body>
+
+</html>
